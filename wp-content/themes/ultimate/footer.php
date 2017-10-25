@@ -1,5 +1,85 @@
 	
-	<?php get_template_part( 'content-contato', 'page' ); ?>
+
+
+<div id="footer">
+	<div class="footer-container">
+		<div class="footer-logo">
+			<img src="<?php the_field('logo_footer', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>">
+			<h5>©Copyright <?php echo date('Y'); ?> - <?php the_field('titulo', 'option'); ?><br>
+			Todos os direitos reservados.</h5>
+		</div>
+		<div class="footer-mapa">
+		  	<h1>MAPA DO SITE</h1>
+			<ul>
+				<li class="menu-home">
+					<a href="<?php echo get_home_url(); ?>" title="Home">- Home</a>
+				</li>
+
+				<li class="menu-sobre">
+					<a href="<?php echo get_permalink(get_page_by_path('sobre-nos')); ?>" title="Sobre">- Sobre nós</a>
+				</li>
+
+				<li class="menu-servicos">
+					<a href="<?php echo get_permalink(get_page_by_path('servicos')); ?>" title="Serviços">- Serviços</a>
+				</li>
+
+				<li class="">
+					<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>" title="Atendimento">- Atendimento</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer-servicos">
+		  <h1>SERVIÇOS</h1>
+		      <ul>
+		        <li><a href="#">- Instalação Ar Condicionado</a></li>
+		        <li><a href="#">- Manutenção Ar Condicionado</a></li>
+		        <li><a href="#">- Eletricista Residencial</a></li>
+		        <li><a href="#">- Eletricista Predial</a></li>
+		        <li><a href="#">- Eletricista Comercial</a></li>
+		      </ul>
+		</div>
+		<div class="footer-contato">
+		  <h1>FALE CONOSCO</h1>
+		    <h2><?php the_field('telefone_1', 'option'); ?></h2>
+		    <p><?php the_field('endereco', 'option'); ?></p>
+		    <p><?php the_field('email', 'option'); ?></p>
+		    <a href="<?php the_field('facebook_rodape', 'option'); ?>"><?php the_field('facebook_rodape', 'option'); ?></a>
+		</div>
+		<div class="ultimate">
+			<a href="http://www.ultimate.com.br" target="_blank" title="ULTIMATE"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_ultimate.png" alt="<?php the_field('titulo', 'option'); ?>"></a>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<footer class="footer" style="display: none;">
 		<div class="msg">

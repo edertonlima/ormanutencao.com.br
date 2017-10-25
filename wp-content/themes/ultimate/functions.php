@@ -6,6 +6,8 @@
  **
  */
 
+$producao = false;
+
 /* HABILITAR / DESABILITAR */
 add_theme_support( 'post-thumbnails' );
 
@@ -242,7 +244,7 @@ function type_post_galerias() {
 	flush_rewrite_rules();
 }
 
-$producao = true;
+
 if($producao){
 	add_action('admin_head', 'my_custom_fonts');
 

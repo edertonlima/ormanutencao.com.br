@@ -150,16 +150,51 @@
 </head>
 <body <?php body_class(); ?>>
 
-	<div id="fb-root"></div>
-	<script>
-		(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=1806184732950369";
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
+	<div id="wrapper">
+		<div id="header">
+			<div class="sombra-logo"></div>
+			<div class="logo">
+				<a href="<?php echo get_home_url(); ?>" title="<?php the_field('titulo', 'option'); ?>">
+					<img src="<?php the_field('logo_header', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>">
+				</a>
+			</div>
+			<div class="fone-top">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/fone-top.png" alt="Eletricista em São José SC">
+				<span class="fone-topo"><?php the_field('telefone_1', 'option'); ?></span>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="menu-home">
+						<a href="<?php echo get_home_url(); ?>" title="Home">Home</a>
+					</li>
+
+					<li class="menu-sobre">
+						<a href="<?php echo get_permalink(get_page_by_path('sobre-nos')); ?>" title="Sobre">Sobre nós</a>
+					</li>
+
+					<li class="menu-servicos">
+						<a href="<?php echo get_permalink(get_page_by_path('servicos')); ?>" title="Serviços">Serviços</a>
+					</li>
+
+					<li class="menu-atendimento">
+						<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>" title="Atendimento">Atendimento</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<?php if(!is_front_page()){ ?>
+
+		<header class="header-title">
+			<div class="container">
+				<h1><?php the_title(); ?></h1>
+			</div>
+		</header>
+
+	<?php } ?>
+
+<?php /*
 
 	<header class="header">
 
@@ -197,29 +232,14 @@
 			<a href="javascript:" class="menu-mobile"><span><em>X</em></span></a>
 
 			<h1>
-				<a href="<?php echo get_home_url(); ?>" title="<?php the_field('titulo', 'option'); ?>">
-					<img src="<?php the_field('logo_header', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>">
-				</a>
+
 			</h1>
 
 			<nav class="nav">
 				<ul class="menu-principal">
-					<li class="menu-home">
-						<a href="<?php echo get_home_url(); ?>" title="Home">Home</a>
-					</li>
 
-					<li class="menu-sobre">
-						<a href="<?php echo get_permalink(get_page_by_path('sobre-nos')); ?>" title="Sobre">Sobre nós</a>
-					</li>
-
-					<li class="menu-servicos">
-						<a href="<?php echo get_permalink(get_page_by_path('servicos')); ?>" title="Serviços">Serviços</a>
-					</li>
-
-					<li class="">
-						<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>" title="Atendimento">Atendimento</a>
-					</li>
 				</ul>
 			</nav>
 
 		</div>	
+*/ ?>

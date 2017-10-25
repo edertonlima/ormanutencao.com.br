@@ -1,0 +1,114 @@
+/* menu mobile */
+.menu-mobile {
+	display: none;
+	float: right;
+	width: 40px;
+	height: 30px;
+	margin-top: 42px;
+	text-decoration: none;
+	position: relative;
+	z-index: 99999;
+
+	@media all and (max-width: 1100px) {
+		display: block;
+	}
+
+	span {
+		display: block;
+
+		em {
+			font-style: normal;
+			color: #6a6c74;
+			font-size: 3rem;
+			line-height: 2rem;
+			display: block;
+			text-decoration: none;
+			margin-top: -2px;
+			@include animacao();
+
+			&:hover {
+				color: $vermelho;
+			}
+		}
+	}
+
+	&.active {
+		text-align: center;
+		margin-top: 0px;
+		position: fixed;
+		right: 55px;
+
+		span {
+			em {
+				color: #ffffff;
+				text-decoration: none;
+			}
+		}
+
+		@media all and (max-width: 600px){
+			top: 25px;
+			right: 38px !important;
+		}
+	}
+
+	&:not(.active){
+		span {
+			position: relative;
+
+			em {
+				display: none;
+			}
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+			}
+
+			&:before {
+				top: 11px;
+			}
+
+			&:after {
+				top: 22px;
+			}
+		}
+
+		span, span:before, span:after {
+			background-color: #6a6c74;
+			height: 5px;
+			width: 40px;
+			@include animacao();
+		}
+
+		&:hover {
+
+			span, span:before, span:after {
+				background-color: $vermelho;
+			}
+		}
+	}
+}
+
+.home {
+	#menu ul li.menu-home a {
+		color: #ffffff;
+	}
+}
+
+.page-id-5 {
+	#menu ul li.menu-sobre a {
+		color: #ffffff;
+	}
+}
+
+.page-id-129 {
+	#menu ul li.menu-servicos a {
+		color: #ffffff;
+	}
+}
+
+.page-id-202 {
+	#menu ul li.menu-atendimento a {
+		color: #ffffff;
+	}
+}

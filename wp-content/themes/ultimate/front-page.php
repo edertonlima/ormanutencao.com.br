@@ -53,6 +53,78 @@
 	</div>
 </section>
 
+<div id="container-bg">
+	<div class="container">
+
+		<div class="ar-condicionado">
+			<div class="ar-condicionado-content">
+			<div class="ar-condicionado-content-text">
+			<h6><strong>Instalação</strong></h6>
+			<h1><strong>Ar Condicionado</strong></h1>
+			<p>Executamos a instalação para obras de pequenos e grandes portes.
+			Com uma equipe especializada para a preparação da infra-estrutura e instalação de qualquer capacidade ou marca de ar condicionado.</p>
+			</div>
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arcondicionado.jpg" alt="Instalação Ar Condicionado"> </div>
+		</div>
+		<div class="manutencao">
+			<h6><strong>Manutenção</strong></h6>
+			<h1><strong>Ar Condicionado</strong></h1>
+			<p>Além de prolongar a vida dos equipamentos, garante a qualidade do ar que circula no interior do ambiente livrando-o de poluentes como fungos, poeira, bactérias, ácaros e bolor.
+			A Zn Elétrica presta manutenção em todas as marcas de ar condicionado</p>
+			<p><strong>Faça seu orçamento conosco.</strong></p>
+
+			<a href="orcamento.html">
+			<div class="orcamento">
+			Orçamento Online
+			</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="servicos">
+		<div class="cont-servicos">
+			<div class="residencial">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/casa.png" alt="Eletricista Residencial">
+			<h2>Eletricista Residencial</h2><br>
+			<p>Instalaçã e Manutenção elétrica em geral, como padrão de energia com aprovação Celesc, instalação de Luminárias em Gesso ou Drywall. Entre outros serviços.</p>
+			</div>
+			<div class="predial">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/contador.png" alt="Eletricista Residencial">
+			<h2>Eletricista Predial</h2><br>
+			<p>Quadros Elétricos, Projetos Elétricos, tubulação em lajes, Contatores, Disjuntores, Caixas de distribuição, infraestrutura de telefônia e lógica.</p>
+			</div>
+
+			<div class="comercial">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/homen.png" alt="Eletricista Residencial">
+			<h2>Eletricista Comercial</h2><br>
+			<p>Instalação de Luminárias, Quadros Elétricos, Projetos Completos de Instalações Elétrica, Decoração em Gesso, preventivos conra incêndio e câmeras de segurança. </p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div id="atendimento">
+			<h1><strong>ATENDIMENTO <?php the_field('telefone_1', 'option'); ?></strong></h1>
+		</div>
+
+	</div>
+
+	<?php get_footer(); ?>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="box-content box-areaatuacao" style="display: none;">
 	<div class="container">
 
@@ -167,7 +239,7 @@
 	</div>
 </section>	
 
-<?php get_footer(); ?>
+
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){

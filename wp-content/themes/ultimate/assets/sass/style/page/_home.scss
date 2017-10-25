@@ -1,0 +1,188 @@
+#container-bg {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	background: url(../images/bg-container.jpg) no-repeat center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#atendimento {
+    width: 1024px;
+    height: 65px;
+    margin: 0 auto;
+
+	h1 {
+	    font-size: 20px;
+	    text-align: center;
+	    color: #000000;
+	    padding-top: 21px;
+
+	    strong, b {
+	    	color: #000000;
+	    }
+	}
+}
+
+.ar-condicionado {
+    width: 100%;
+    height: 215px;
+    background: #2a2a2a;
+    float: left;
+    margin-top: 25px;
+    margin-left: -512px;
+
+	.ar-condicionado-content {
+	    width: 512px;
+	    height: 215px;
+	    float: right;
+	    padding-top: 10px;
+	}
+
+	.ar-condicionado-content-text {
+	    width: 240px;
+	    height: 215px;
+	    margin: 0 auto;
+	        margin-right: auto;
+	    float: left;
+	    margin-right: 10px;
+	}
+
+	h6 {
+	    font-size: 18px;
+	    text-align: left;
+	    color: #e9b63c;
+
+	    strong {
+	    	color: #e9b63c;
+	    }
+	}
+
+	h1 {
+	    font-size: 24px;
+	    text-align: left;
+	    color: #e9b63c;
+
+	    strong {
+	    	color: #e9b63c;
+	    }
+	}
+
+	p {
+	    font-size: 14px;
+	    text-align: left;
+	    color: #e9b63c;
+	    margin-top: 15px;
+	}
+}
+
+.manutencao {
+    width: 500px;
+    height: 215px;
+    float: right;
+    margin-top: 25px;
+
+	h6 {
+	    font-size: 18px;
+	    text-align: right;
+	    color: #000000;
+
+	    strong {
+	    	color: #000000; 
+	    }
+	}
+
+	h1 {
+	    font-size: 24px;
+	    text-align: right;
+	    color: #000000;
+
+	    strong {
+	    	color: #000000; 
+	    }
+	}
+
+	p {
+	    font-size: 14px;
+	    text-align: right;
+	    color: #2a2a2a;
+	    margin-top: 15px;
+
+	    strong {
+	    	 color: #2a2a2a;
+	    }
+	}
+
+	.orcamento {
+	    width: 150px;
+	    height: 30px;
+	    margin: 0 auto;
+	        margin-top: 0px;
+	    margin-top: 15px;
+	    float: right;
+	    background: #FFCB00;
+	    font-size: 16px;
+	    text-align: center;
+	    color: #2a2a2a;
+	    padding: 5px;
+	    cursor: pointer;
+	    @include animacao;
+	}
+}
+
+.servicos {
+    width: 100%;
+    height: 260px;
+    margin-top: 25px;
+    background: rgba(229,230,231, 0.4);
+
+	.cont-servicos {
+	    width: 1024px;
+	    height: 260px;
+	    margin: 0 auto;
+
+		.residencial {
+		    width: 330px;
+		    height: 260px;
+		    margin-right: 10px;
+		    float: left;
+		}
+
+		.predial {
+		    width: 330px;
+		    height: 260px;
+		    margin-right: 10px;
+		    float: left;
+		}
+
+		.comercial {
+		    width: 330px;
+		    height: 260px;
+		    margin-right: 10px;
+		    float: left;
+		}
+
+		.residencial, .predial, .comercial {
+			img {
+			    width: 145px;
+			    height: 94px;
+			    margin: 20px 92px 10px 92px;
+			}
+
+			h2 {
+			    font-size: 20px;
+			    text-align: center;
+			    color: #000000;
+			    font-weight: $bold;
+			}
+
+			p {
+			    font-size: 14px;
+			    text-align: center;
+			    color: #000000;
+			}
+		}
+	}
+}

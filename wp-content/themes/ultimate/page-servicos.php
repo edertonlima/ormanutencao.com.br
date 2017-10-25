@@ -4,18 +4,6 @@
 
 <?php get_header(); ?>
 
-		<div class="header-tit">
-			<div class="image-header" style="background-image: url('<?php echo $imagem[0]; ?>');"></div>
-
-			<h2><?php the_title(); ?></h2>
-
-			<ul class="breadcrumbs">
-				<li><a href="<?php echo get_home_url(); ?>" title="Home">Home</a></li>
-				<li><strong><?php the_title(); ?></strong></li>
-			</ul>
-		</div>
-	</header>
-
 	<?php
 	// Start the loop.
 	while ( have_posts() ) : the_post();
