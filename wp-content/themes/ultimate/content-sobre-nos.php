@@ -3,31 +3,34 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="col-text-sobre">
-				<div class="col-12">
+			<div class="col-text">
+				
+				<div class="col-4">
+					<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); ?>
+					<img src="<?php echo $imagem[0]; ?>" alt="Conheça um pouco sobre nós" class="img-sobre">
+				</div>
 
+				<div class="col-8">
 					<div class="text-detalhe">
 						<?php the_content(); ?>
 					</div>
-
 				</div>
+
 			</div>
 
-			<div class="col-text-sobre">
-				<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); ?>
-				<img src="<?php echo $imagem[0]; ?>" alt="Conheça um pouco sobre nós" class="img-sobre">
-			</div>
-
-			<div class="col-text-sobre">
+			<div class="col-text">
 				<div class="col-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/missao.png" alt="Missão" class="ico">
 					<h4>Missão</h4>
 					<?php the_field('missao'); ?>
 				</div>
 				<div class="col-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/visao.png" alt="Visão" class="ico">
 					<h4>Visão</h4>
 					<?php the_field('visao'); ?>
 				</div>
 				<div class="col-4">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/valores.png" alt="Valores" class="ico">
 					<h4>Valores</h4>
 					<?php the_field('valores'); ?>
 				</div>
@@ -36,84 +39,7 @@
 
 	</div>
 
-
-	<div class="text-box-resp">
-		<div class="row">
-		
-			<div class="col-6 resp-social">
-				<h4>Responsabilidade Social</h4>
-				<p><?php the_field('responsabilidade_social'); ?></p>
-			</div>
-
-			<div class="col-6 resp-ambiental">
-				<h4>Responsabilidade Ambiental</h4>
-				<p><?php the_field('responsabilidade_ambiental'); ?></p>
-			</div>
-
-		</div>
-	</div>
 </section>
-
-<?php if( have_rows('areas_de_atuacao') ): ?>
-	<section class="box-content box-post box-areaatuacao">
-		<div class="container">
-			<div class="row">
-
-					
-				<?php while ( have_rows('areas_de_atuacao') ) : the_row(); ?>
-
-					<div class="col-4">				
-						<div class="item-areaatuacao">
-							<div class="icon-content">
-								<div class="icon">
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-								</div>
-							</div>
-							<div class="desc_wrapper">
-								<h3><?php the_sub_field('titulo'); ?></h3>
-								<p><?php the_sub_field('texto'); ?></p>
-							</div>
-						</div>
-					</div>
-
-				<?php endwhile; ?>
-
-			</div>
-		</div>
-	</section>
-<?php endif; ?>
-
-<?php if( have_rows('equipe') ): ?>
-	<section class="box-content box-post box-post-sobre">
-		<div class="container">
-
-			<div class="list-post-home">
-				<h4>
-					<?php the_field('titulo_equipe'); ?>
-					<span><?php the_field('sub_titulo_equipe'); ?></span>
-				</h4>
-			</div>
-
-			<ul class="row list-post">
-				<?php while ( have_rows('equipe') ) : the_row(); ?>
-
-					<li class="col-4">
-						<a href="javascript:" style="background-image: url('<?php the_sub_field('imagem'); ?>');">
-							<div class="mask">
-								<i class="fa fa-link" aria-hidden="true"></i>
-							</div>
-						</a>
-
-						<h3><?php the_sub_field('titulo'); ?></h3>
-						<p><?php the_sub_field('texto'); ?></p>
-					</li>
-
-				<?php endwhile; ?>
-			</ul>
-
-		</div>
-	</section>
-<?php endif; ?>
 
 <?php if( have_rows('parceiros') ): ?>
 	<section class="box-content box-post parceiros">
@@ -127,11 +53,20 @@
 			</div>
 			
 			<div class="owl-carousel owl-theme parceiros">
-				<?php while ( have_rows('parceiros') ) : the_row(); ?>
-					<a href="<?php the_sub_field('link'); ?>" target="_blank" title="<?php the_sub_field('titulo'); ?>" class="item">
-						<i class="fa fa-link" aria-hidden="true"></i>
-						<img src="<?php the_sub_field('imagem'); ?>" alt="<?php the_sub_field('titulo'); ?>">
-					</a>
+				<?php while ( have_rows('parceiros') ) : the_row(); 
+
+					if(get_sub_field('link')){ ?>
+						<a href="<?php the_sub_field('link'); ?>" target="_blank" title="<?php the_sub_field('titulo'); ?>" class="item">
+							<img src="<?php the_sub_field('imagem'); ?>" alt="<?php the_sub_field('titulo'); ?>">
+							<h5><?php the_sub_field('titulo'); ?></h5>
+						</a>
+					<?php }else{ ?>
+						<div class="item">
+							<img src="<?php the_sub_field('imagem'); ?>" alt="<?php the_sub_field('titulo'); ?>">
+							<h5><?php the_sub_field('titulo'); ?></h5>
+						</div>
+					<?php } ?>
+
 				<?php endwhile; ?>
 			</div>		
 

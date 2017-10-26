@@ -113,13 +113,13 @@
 		right: 0;
 		margin: 0;
 		left: auto;
-		padding: 10px 185px 8px 40px;
+		padding: 10px 0 8px;
 		background: #2a2a2a;
-		width: auto;
+		width: 100%;
 
 		li {
-			width: 10px;
-			height: 10px;
+			width: 15px;
+			height: 15px;
 			display: inline-block;
 			margin: 0 5px;
 			border: none;
@@ -128,7 +128,7 @@
 			@include animacao();
 
 			&.active {
-				background-color: #eab63a;
+				background-color: #e48204;
 			}
 		}
 	}

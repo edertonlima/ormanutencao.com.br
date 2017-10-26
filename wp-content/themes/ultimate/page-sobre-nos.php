@@ -9,7 +9,7 @@
 	while ( have_posts() ) : the_post();
 
 		// Include the page content template.
-		//get_template_part( 'content-sobre-nos', 'page' );
+		get_template_part( 'content-sobre-nos', 'page' );
 
 	// End the loop.
 	endwhile;

@@ -92,7 +92,7 @@ body * {
 	padding: 70px 0;
 
 	&.box-page {
-		min-height: 700px;
+		
 	}
 
 	&.box-segmentos {
@@ -123,6 +123,10 @@ body * {
 
 	&.det-post {
 		padding: 70px 0;
+	}
+
+	&.box-page-servico {
+		padding-bottom: 0px;
 	}
 
 	&.cinza {

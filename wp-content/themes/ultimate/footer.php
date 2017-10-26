@@ -1,54 +1,90 @@
 	
-
+<div id="atendimento">
+	<div class="container">
+		<h1><strong>ATENDIMENTO: <i class="fa fa-phone" aria-hidden="true"></i><?php the_field('telefone_1', 'option'); ?><i class="fa fa-whatsapp" aria-hidden="true"></i> <?php the_field('whatsapp', 'option'); ?></strong></h1>
+	</div>
+</div>
 
 <div id="footer">
-	<div class="footer-container">
-		<div class="footer-logo">
-			<img src="<?php the_field('logo_footer', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>">
-			<h5>©Copyright <?php echo date('Y'); ?> - <?php the_field('titulo', 'option'); ?><br>
-			Todos os direitos reservados.</h5>
-		</div>
-		<div class="footer-mapa">
-		  	<h1>MAPA DO SITE</h1>
-			<ul>
-				<li class="menu-home">
-					<a href="<?php echo get_home_url(); ?>" title="Home">- Home</a>
-				</li>
+	<div class="container">
 
-				<li class="menu-sobre">
-					<a href="<?php echo get_permalink(get_page_by_path('sobre-nos')); ?>" title="Sobre">- Sobre nós</a>
-				</li>
+		<div class="row">
 
-				<li class="menu-servicos">
-					<a href="<?php echo get_permalink(get_page_by_path('servicos')); ?>" title="Serviços">- Serviços</a>
-				</li>
+			<div class="col-3 footer-mapa">
+			  	<h1>MAPA DO SITE</h1>
+				<ul>
+					<li class="menu-home">
+						<a href="<?php echo get_home_url(); ?>" title="Home">- Home</a>
+					</li>
 
-				<li class="">
-					<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>" title="Atendimento">- Atendimento</a>
-				</li>
-			</ul>
-		</div>
-		<div class="footer-servicos">
-		  <h1>SERVIÇOS</h1>
-		      <ul>
-		        <li><a href="#">- Instalação Ar Condicionado</a></li>
-		        <li><a href="#">- Manutenção Ar Condicionado</a></li>
-		        <li><a href="#">- Eletricista Residencial</a></li>
-		        <li><a href="#">- Eletricista Predial</a></li>
-		        <li><a href="#">- Eletricista Comercial</a></li>
-		      </ul>
-		</div>
-		<div class="footer-contato">
-		  <h1>FALE CONOSCO</h1>
-		    <h2><?php the_field('telefone_1', 'option'); ?></h2>
-		    <p><?php the_field('endereco', 'option'); ?></p>
-		    <p><?php the_field('email', 'option'); ?></p>
-		    <a href="<?php the_field('facebook_rodape', 'option'); ?>"><?php the_field('facebook_rodape', 'option'); ?></a>
-		</div>
-		<div class="ultimate">
-			<a href="http://www.ultimate.com.br" target="_blank" title="ULTIMATE"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_ultimate.png" alt="<?php the_field('titulo', 'option'); ?>"></a>
-		</div>
+					<li class="menu-sobre">
+						<a href="<?php echo get_permalink(get_page_by_path('sobre-nos')); ?>" title="Sobre">- Sobre nós</a>
+					</li>
 
+					<li class="menu-servicos">
+						<a href="<?php echo get_permalink(get_page_by_path('servicos')); ?>" title="Serviços">- Serviços</a>
+					</li>
+
+					<li class="menu-atendimento">
+						<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>" title="Atendimento">- Atendimento</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-3 footer-servicos">
+				<h1>SERVIÇOS</h1>
+
+				<ul>
+					<?php if( have_rows('servicos',129) ):
+						while ( have_rows('servicos',129) ) : the_row(); ?>
+
+							<li>
+								<a href="<?php echo get_permalink(get_page_by_path('servicos')); ?>" title="<?php the_sub_field('titulo'); ?>">
+									- <?php the_sub_field('titulo'); ?>
+								</a>
+							</li>
+
+						<?php endwhile;
+					endif; ?>
+
+			      </ul>
+			</div>
+
+			<div class="col-4 footer-contato">
+			  <h1>ONDE ESTAMOS</h1>
+			    <p><?php the_field('endereco', 'option'); ?></p>
+			    <a href="mailto:<?php the_field('email', 'option'); ?>" title="<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a>
+			</div>
+
+			<div class="col-2 footer-contato">
+				<h1>SIGA-NOS</h1>
+				<?php if( have_rows('redes_sociais','option') ): ?>
+					<div class="redes">						
+						<?php while ( have_rows('redes_sociais','option') ) : the_row(); ?>
+
+							<a href="<?php the_sub_field('url','option'); ?>" title="<?php the_sub_field('nome','option'); ?>" target="_blank">
+								<?php the_sub_field('icone','option'); ?>
+							</a>
+						<?php endwhile; ?>						
+					</div>
+				<?php endif; ?>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="copy">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 ultimate">
+				<h5>©Copyright <?php echo date('Y'); ?> - <?php the_field('titulo', 'option'); ?>. Todos os direitos reservados.</h5>
+
+				<a href="http://www.ultimate.com.br" target="_blank" title="ULTIMATE">ULTIMATE! tecnologia e design</a>
+			</div>
+
+		</div>
 	</div>
 </div>
 
@@ -167,38 +203,6 @@
 			jQuery("#gotop").click(function(event){
 				event.preventDefault();
 				jQuery('html,body').animate( { scrollTop: 0 } , 1000);
-			});
-
-
-			// FORM
-			jQuery(".enviar").click(function(){
-				jQuery('.enviar').html('ENVIANDO').prop( "disabled", true );
-				jQuery('.msg-form').removeClass('erro ok').html('');
-				var nome = jQuery('#nome').val();
-				var email = jQuery('#email').val();
-				var telefone = jQuery('#telefone').val();
-				var assunto = jQuery('#assunto').val();
-				var mensagem = jQuery('#texto').val();
-				var para = '<?php get_field('email', 'option'); ?>';
-				var nome_site = '<?php get_field('titulo', 'option'); ?>';
-
-				if(email!=''){
-					jQuery.getJSON("<?php echo get_template_directory_uri(); ?>/mail.php", { nome:nome, email:email, telefone:telefone, assunto:assunto, mensagem:mensagem, para:para, nome_site:nome_site }, function(result){		
-						if(result=='ok'){
-							resultado = 'Enviado com sucesso! Obrigado.';
-							classe = 'ok';
-						}else{
-							resultado = result;
-							classe = 'erro';
-						}
-						jQuery('.msg-form').addClass(classe).html(resultado);
-						jQuery('form').trigger("reset");
-						jQuery('.enviar').html('CADASTRAR').prop( "disabled", false );
-					});
-				}else{
-					jQuery('.msg-form').addClass('erro').html('Por favor, digite um e-mail válido.');
-					jQuery('.enviar').html('CADASTRAR').prop( "disabled", false );
-				}
 			});
 		});
 

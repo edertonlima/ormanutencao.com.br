@@ -15,8 +15,8 @@ input:not([type='submit']), textarea {
 
 button, input[type='submit'], .button {
 	width: auto;
-	height: 45px;
-	line-height: 45px;
+	height: 30px;
+	line-height: 26px;
 	padding: 0 35px;
 	color: #ffffff;
 	font-weight: $regular;
@@ -24,10 +24,8 @@ button, input[type='submit'], .button {
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
-	background-color: $vermelho;
-	border: 1px solid darken($vermelho, 5%);
+	background-color: #e48204;
 	cursor: pointer;
-	border-radius: 5px;
 	@include animacao;
 
 	span {
@@ -42,7 +40,7 @@ button, input[type='submit'], .button {
 	}	
 
 	&:hover {
-		background-color: darken($vermelho, 10%);
+		background-color: darken(#e48204, 10%);
 	}
 }
 

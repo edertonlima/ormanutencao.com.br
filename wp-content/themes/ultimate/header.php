@@ -159,8 +159,20 @@
 				</a>
 			</div>
 			<div class="fone-top">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/fone-top.png" alt="Eletricista em São José SC">
-				<span class="fone-topo"><?php the_field('telefone_1', 'option'); ?></span>
+				<?php if( have_rows('redes_sociais','option') ): ?>
+					<div class="redes">						
+						<?php while ( have_rows('redes_sociais','option') ) : the_row(); ?>
+
+							<a href="<?php the_sub_field('url','option'); ?>" title="<?php the_sub_field('nome','option'); ?>" target="_blank">
+								<?php the_sub_field('icone','option'); ?>
+							</a>
+						<?php endwhile; ?>						
+					</div>
+				<?php endif; ?>
+				<span class="fone-topo">
+					<strong><?php the_field('telefone_1', 'option'); ?><br></strong>
+					<?php the_field('email', 'option'); ?><br>
+				</span>
 			</div>
 			<div id="menu">
 				<ul>
@@ -188,7 +200,15 @@
 
 		<header class="header-title">
 			<div class="container">
-				<h1><?php the_title(); ?></h1>
+
+				<?php 
+					global $orcamento;
+					if((is_page(202)) and ($orcamento != '')){ ?>
+						<h1>Orçamento de Serviço</h1>
+					<?php }else{ ?>
+						<h1><?php the_title(); ?></h1>
+					<?php }
+				?>
 			</div>
 		</header>
 

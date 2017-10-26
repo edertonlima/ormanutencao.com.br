@@ -54,34 +54,43 @@
 </section>
 
 <div id="container-bg">
-	<div class="container">
 
-		<div class="ar-condicionado">
-			<div class="ar-condicionado-content">
-			<div class="ar-condicionado-content-text">
-			<h6><strong>Instalação</strong></h6>
-			<h1><strong>Ar Condicionado</strong></h1>
-			<p>Executamos a instalação para obras de pequenos e grandes portes.
-			Com uma equipe especializada para a preparação da infra-estrutura e instalação de qualquer capacidade ou marca de ar condicionado.</p>
+	<section class="box-content box-page">
+		<div class="container">
+
+			<div class="ar-condicionado">
+				<div class="ar-condicionado-content">
+
+					<div class="row">
+						
+						<div class="col-6">
+							<div class="dest-home">
+								<div class="ar-condicionado-content-text">
+									<h1><strong><?php the_field('titulo','option'); ?></strong></h1>
+									<p><?php the_field('destaque_home',5); ?></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<?php 
+								$imagem = wp_get_attachment_image_src( get_post_thumbnail_id(5), '' );
+							?>
+							<img src="<?php echo $imagem[0]; ?>" alt="OR Manutenções">
+						</div>
+
+					</div>
+
+				</div>
 			</div>
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arcondicionado.jpg" alt="Instalação Ar Condicionado"> </div>
-		</div>
-		<div class="manutencao">
-			<h6><strong>Manutenção</strong></h6>
-			<h1><strong>Ar Condicionado</strong></h1>
-			<p>Além de prolongar a vida dos equipamentos, garante a qualidade do ar que circula no interior do ambiente livrando-o de poluentes como fungos, poeira, bactérias, ácaros e bolor.
-			A Zn Elétrica presta manutenção em todas as marcas de ar condicionado</p>
-			<p><strong>Faça seu orçamento conosco.</strong></p>
-
-			<a href="orcamento.html">
-			<div class="orcamento">
-			Orçamento Online
+			<div class="manutencao">
+				<h1><strong><?php the_field('titulo_home',5); ?></strong></h1>
+				<p><?php the_field('texto_home',5); ?></p>
+				<a href="<?php echo get_permalink(get_page_by_path('sobre-nos')); ?>" title="Saiba Mais" class="orcamento">Saiba Mais</a>
 			</div>
-			</a>
 		</div>
-	</div>
+	</section>
 
-	<div class="servicos">
+<?php /*	<div class="servicos">
 		<div class="cont-servicos">
 			<div class="residencial">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/casa.png" alt="Eletricista Residencial">
@@ -100,151 +109,77 @@
 			<p>Instalação de Luminárias, Quadros Elétricos, Projetos Completos de Instalações Elétrica, Decoração em Gesso, preventivos conra incêndio e câmeras de segurança. </p>
 			</div>
 		</div>
-	</div>
+	</div> */ ?>
 
-	<div class="container">
+	<section class="box-content box-page box-page-servico">
+		<div class="container">
+			
+			<div class="row">
 
-		<div id="atendimento">
-			<h1><strong>ATENDIMENTO <?php the_field('telefone_1', 'option'); ?></strong></h1>
+				<div class="col-12">
+					<h2>Nossos Serviços</h2>
+				</div>
+
+				<div class="col-text">
+
+					<?php if( have_rows('servicos',129) ):
+						$num_galera = 0;
+
+						while ( have_rows('servicos',129) ) : the_row(); $num_galera = $num_galera+1; $imagem_galeria = get_sub_field('portfolio');
+							if($num_galera < 4){ ?>
+
+								<div class="col-4 list-servicos">
+									<div class="box-galeria">
+										<?php $image = get_sub_field('imagem_principal'); ?>
+										<?php if( $imagem_galeria ): ?>
+											<a href="<?php echo $image['url']; ?>" class="galeria fancybox" data-fancybox="galeria<?php echo '-'.$num_galera; ?>">Visualizar Galeria</a>
+										<?php endif; ?>
+										<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php the_sub_field('titulo'); ?>">
+									</div>
+									<h4><?php the_sub_field('titulo'); ?></h4>
+									<p><?php the_sub_field('texto'); ?></p>
+									<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>?orcamento=<?php echo (get_row_index()-1); ?>" class="galeria orcamento">Solicitar Orçamento</a>
+
+									<?php if( $imagem_galeria ): ?>
+										<?php foreach( $imagem_galeria as $imagem ): ?>
+											<a href="<?php echo $imagem['url']; ?>" class="fancybox" data-fancybox="galeria<?php echo '-'.$num_galera; ?>" style="display: none;">
+												<img src="<?php echo $imagem['sizes']['thumbnail']; ?>">
+											</a>
+										<?php endforeach; ?>
+									<?php endif; ?>
+
+								</div>
+
+							<?php }
+						endwhile;
+
+					endif; ?>
+				
+				</div>
+			</div>
+
 		</div>
-
-	</div>
+	</section>
 
 	<?php get_footer(); ?>
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-<section class="box-content box-areaatuacao" style="display: none;">
-	<div class="container">
-
-		<?php $page = get_page_by_path( 'sobre' ); ?>
-		<div class="list-post-home">
-			<h4><?php the_field('titulo_home',$page->ID); ?></h4>
-		</div>
-
-		<div class="row">
-
-			<?php if( have_rows('areas_de_atuacao',$page->ID) ): ?>
-								
-				<?php while ( have_rows('areas_de_atuacao',$page->ID) ) : the_row(); ?>
-
-					<div class="col-4">				
-						<div class="item-areaatuacao">
-							<div class="icon-content">
-								<div class="icon">
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-								</div>
-							</div>
-							<div class="desc_wrapper">
-								<h3><?php the_sub_field('titulo'); ?></h3>
-								<p><?php the_sub_field('texto'); ?></p>
-							</div>
-						</div>
-					</div>
-
-				<?php endwhile; ?>
-
-			<?php endif; ?>
-
-			<div class="home-sobre-nos">
-				<div class="col-6">
-					<p><strong><?php the_field('destaque_home',$page->ID); ?></strong></p>
-
-					<?php the_field('texto_home',$page->ID); ?>
-
-					<a href="<?php echo get_permalink(get_page_by_path('sobre')); ?>" title="Leia mais" class="leia-mais">
-						<i class="fa fa-file-text-o" aria-hidden="true"></i>
-						Leia mais
-					</a>
-				</div>
-
-				<div class="col-6">
-
-					<?php 
-						$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($page->ID), '' );
-					?>
-					<img src="<?php echo $imagem[0]; ?>" alt="Conheça um pouco sobre nós">
-				</div>
-			</div>
-
-		</div>
-	</div>	
-</section>
-
-<section class="box-content box-post box-projetos" style="display: none;">
-	<div class="list-post-home">
-		<h3>Conheça nossos projetos</h3>
-
-		<ul class="row list-post">
-
-			<?php
-				query_posts(
-					array(
-						'post_type' => 'projetos',
-						'posts_per_page' => 3
-					)
-				);
-
-				while ( have_posts() ) : the_post();
-
-					get_template_part( 'content-list-projetos' );
-
-				endwhile;
-				wp_reset_query();
-			?>
-
-		</ul>
-
-	</div>
-</section>
-
-<section class="box-content box-post" style="display: none;">
-	<div class="container">
-
-		<div class="list-post-home">
-			<h4>Últimas notícias</h4>
-		</div>
-
-		<ul class="row list-post">
-
-			<?php
-				query_posts(
-					array(
-						'post_type' => 'post',
-						'posts_per_page' => 3
-					)
-				);
-
-				while ( have_posts() ) : the_post();
-
-					get_template_part( 'content-list' );
-
-				endwhile;
-				wp_reset_query();
-			?>
-
-		</ul>
-
-	</div>
-</section>	
-
-
-
 <script type="text/javascript">
 	jQuery(document).ready(function(){
+		height_img = jQuery('.ar-condicionado-content').height();
+		jQuery('.dest-home').height(height_img);
 	});
 
 	jQuery(window).resize(function(){
+		height_img = jQuery('.ar-condicionado-content').height();
+		jQuery('.dest-home').height(height_img);
+	});
+</script>
+
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/fancybox/fancybox.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {		
+		jQuery('.fancybox').fancybox();	
 	});
 </script>

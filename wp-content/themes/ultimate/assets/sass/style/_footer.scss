@@ -1,9 +1,9 @@
 #footer {
     width: 100%;
-    height: 170px;
-    margin: 20px auto 0;
 	clear: both;
 	float: left;
+	background-color: #262626;
+	padding: 40px 0;
 
     a {
     	text-decoration: none;
@@ -13,55 +13,35 @@
     	}
     }
 
-	.footer-container {
-	    width: 1024px;
-	    height: 160px;
-	    margin: 0 auto;
-	    border-top: 2px solid #b17304;
-
-	    div {
-	    	padding: 0 5px;
-	    }
-	}
-
 	.footer-logo {
-	    width: 300px;
-	    height: 150px;
-	    margin: 0 auto;
-	    float: left;
 
 		img {
 		    width: 173px;
 		    height: 99px;
-		    margin: 10px 0px 0;
 		}
 
 		h5 {
 		    font-size: 14px;
 		    text-align: left;
-		    color: #000000;
+		    color: #8c8c8c;
 		}
 	}
 
 	.footer-mapa {
-	    width: 170px;
-	    height: 150px;
-	    margin: 10px 0px 0px;
-	    float: left;
 
 		h1 {
 		    font-size: 15px;
-		    color: #000000;
+		    color: #bcbcbc;
 		    text-align: left;
 		    font-weight: $bold;
-		    padding: 10px 0px 10px 0px;
+		    margin-bottom: 10px; 
 		}
 
 		ul {
 			li {
 				a {
 				    font-size: 13px;
-				    color: #000000;
+				    color: #8c8c8c;
 				    text-align: left;
 				    @include animacao;
 				}
@@ -70,24 +50,20 @@
 	}
 
 	.footer-servicos {
-	    width: 230px;
-	    height: 150px;
-	    margin: 10px 0px 0px;
-	    float: left;
 
 		h1 {
 		    font-size: 15px;
-		    color: #000000;
+		    color: #bcbcbc;
 		    font-weight: $bold;
 		    text-align: left;
-		    padding: 10px 0px 10px 0px;
+		    margin-bottom: 10px; 
 		}
 
 		ul {
 			li {
 				a {
 				    font-size: 13px;
-				    color: #000000;
+				    color: #8c8c8c;
 				    text-align: left;
 				    @include animacao;
 				}
@@ -96,55 +72,84 @@
 	}
 
 	.footer-contato {
-	    width: 200px;
-	    height: 150px;
-	    margin: 0 auto;
-	    float: left;
 
 		h1 {
 		    font-size: 14px;
-		    color: #000000;
+		    color: #bcbcbc;
 		    font-weight: $bold;
 		    text-align: left;
-		    padding: 15px 0px 10px 0px;
+		    margin-bottom: 10px; 
 		}
 
 		h2 {
 		    font-size: 24px;
-		    color: #000000;
+		    color: #8c8c8c;
 		    text-align: left;
+		    margin-bottom: 10px;
 		}
 
 		b {
 		    font-size: 16px;
-		    color: #000000;
+		    color: #8c8c8c;
 		    text-align: left;
 		}
 
 		p {
 		    font-size: 12px;
-		    color: #000000;
+		    color: #8c8c8c;
 		    text-align: left;
 		}
 
 		a {
 		    font-size: 12px;
-		    color: #000000;
+		    color: #8c8c8c;
 		    text-align: left;
+		    margin-top: 10px;
+		    display: block;
+		}
+
+		.redes {
+			a {
+				display: inline-block;
+				padding: 5px;
+				margin: 0 3px;
+			}
+
+			i {
+				font-size: 20px;
+				color: #8c8c8c;
+				@include animacao;
+
+			    &:hover {
+			    	color: #e48204;
+			    }
+			}
 		}
 	}
+}
+
+.copy {
+	background-color: darken(#262626, 5%);
+	padding: 10px 0;
+	@include clear;
 
 	.ultimate {
-	    width: 124px;
-	    height: 20px;
-	    margin: 80px 0px 0px;
-	    float: left;
-	    text-align: right;
+		h5 {
+			color: #8c8c8c;
+			font-size: 12px;
+			display: inline-block;
+		}
 
 		a {
-		    font-size: 12px;
-		    color: #000000;
-		    padding-top: 140px;
+			display: inline-block;
+			color: #8c8c8c;
+			float: right;
+			font-size: 12px;
+			@include animacao;
+
+			&:hover {
+				color: #ffffff;
+			}
 		}
 	}
 }
@@ -152,14 +157,13 @@
 body {
 	&.home {
 		#footer {
-			background-image: inherit;
 			margin-top: 0px;
 		}
 	}
 
 	&:not(.home){
 		#footer {
-			background: url('../images/bg-rodape.png') no-repeat;
+			//background: url('../images/bg-rodape.png') no-repeat;
 		}
 	}
 }
