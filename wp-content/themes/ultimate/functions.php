@@ -6,7 +6,7 @@
  **
  */
 
-$producao = false;
+$producao = true;
 
 /* HABILITAR / DESABILITAR */
 add_theme_support( 'post-thumbnails' );
@@ -144,7 +144,7 @@ if($producao){
 	function my_custom_fonts() {
 	  echo '<style>
 		#menu-media, #menu-comments, #menu-appearance, #menu-plugins, #menu-tools, #menu-settings, #toplevel_page_edit-post_type-acf, #toplevel_page_edit-post_type-acf-field-group, 
-		#toplevel_page_zilla-likes, 
+		#toplevel_page_zilla-likes, #menu-posts 
 	  	#menu-posts li:nth-child(4), 
 		#screen-options-link-wrap, 
 		.acf-postbox h2 a, 
@@ -170,6 +170,7 @@ if($producao){
 
 			jQuery("document").ready(function(){
 				jQuery("#menu-media").remove();
+				jQuery("#menu-posts").remove();
 				jQuery("#menu-comments").remove();
 				jQuery("#menu-appearance").remove();
 				jQuery("#menu-plugins").remove();
