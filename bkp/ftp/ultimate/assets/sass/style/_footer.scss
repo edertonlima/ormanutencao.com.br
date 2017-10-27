@@ -1,0 +1,169 @@
+#footer {
+    width: 100%;
+	clear: both;
+	float: left;
+	background-color: #262626;
+	padding: 40px 0;
+
+    a {
+    	text-decoration: none;
+
+    	&:hover {
+    		opacity: .5;
+    	}
+    }
+
+	.footer-logo {
+
+		img {
+		    width: 173px;
+		    height: 99px;
+		}
+
+		h5 {
+		    font-size: 14px;
+		    text-align: left;
+		    color: #8c8c8c;
+		}
+	}
+
+	.footer-mapa {
+
+		h1 {
+		    font-size: 15px;
+		    color: #bcbcbc;
+		    text-align: left;
+		    font-weight: $bold;
+		    margin-bottom: 10px; 
+		}
+
+		ul {
+			li {
+				a {
+				    font-size: 13px;
+				    color: #8c8c8c;
+				    text-align: left;
+				    @include animacao;
+				}
+			}
+		}
+	}
+
+	.footer-servicos {
+
+		h1 {
+		    font-size: 15px;
+		    color: #bcbcbc;
+		    font-weight: $bold;
+		    text-align: left;
+		    margin-bottom: 10px; 
+		}
+
+		ul {
+			li {
+				a {
+				    font-size: 13px;
+				    color: #8c8c8c;
+				    text-align: left;
+				    @include animacao;
+				}
+			}
+		}
+	}
+
+	.footer-contato {
+
+		h1 {
+		    font-size: 14px;
+		    color: #bcbcbc;
+		    font-weight: $bold;
+		    text-align: left;
+		    margin-bottom: 10px; 
+		}
+
+		h2 {
+		    font-size: 24px;
+		    color: #8c8c8c;
+		    text-align: left;
+		    margin-bottom: 10px;
+		}
+
+		b {
+		    font-size: 16px;
+		    color: #8c8c8c;
+		    text-align: left;
+		}
+
+		p {
+		    font-size: 12px;
+		    color: #8c8c8c;
+		    text-align: left;
+		}
+
+		a {
+		    font-size: 12px;
+		    color: #8c8c8c;
+		    text-align: left;
+		    margin-top: 10px;
+		    display: block;
+		}
+
+		.redes {
+			a {
+				display: inline-block;
+				padding: 5px;
+				margin: 0 3px;
+			}
+
+			i {
+				font-size: 20px;
+				color: #8c8c8c;
+				@include animacao;
+
+			    &:hover {
+			    	color: #e48204;
+			    }
+			}
+		}
+	}
+}
+
+.copy {
+	background-color: darken(#262626, 5%);
+	padding: 10px 0;
+	@include clear;
+
+	.ultimate {
+		h5 {
+			color: #8c8c8c;
+			font-size: 12px;
+			display: inline-block;
+		}
+
+		a {
+			display: inline-block;
+			color: #8c8c8c;
+			float: right;
+			font-size: 12px;
+			@include animacao;
+
+			&:hover {
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+body {
+	&.home {
+		#footer {
+			margin-top: 0px;
+		}
+	}
+
+	&:not(.home){
+		#footer {
+			//background: url('../images/bg-rodape.png') no-repeat;
+		}
+	}
+}

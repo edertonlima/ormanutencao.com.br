@@ -81,10 +81,6 @@ body * {
 	}
 }
 
-.home .box-projetos {
-	padding-top: 70px;
-}
-
 .box-content {
 	@include clear;
 	width: 100%;
@@ -151,4 +147,14 @@ body * {
 
 .no-padding-top {
 	padding-top: 0!important;
+}
+
+.home {
+	.box-projetos {
+		padding-top: 70px;
+	}
+
+	.box-page-servico {
+		padding-bottom: 70px;
+	}
 }

@@ -35,6 +35,15 @@
 				<h1>SERVIÇOS</h1>
 
 				<ul>
+
+					<li><a href="javascript:" title="Comercial">- Comercial</a></li>
+					<li><a href="javascript:" title="Decorativo">- Decorativo</a></li>
+					<li><a href="javascript:" title="Insdustrial">- Insdustrial</a></li>
+					<li><a href="javascript:" title="Predial">- Predial</a></li>
+					<li><a href="javascript:" title="Residencial">- Residencial</a></li>
+
+
+				<?php /*
 					<?php if( have_rows('servicos',129) ):
 						while ( have_rows('servicos',129) ) : the_row(); ?>
 
@@ -47,7 +56,9 @@
 						<?php endwhile;
 					endif; ?>
 
-			      </ul>
+			      */ ?>
+			      	
+			    </ul>
 			</div>
 
 			<div class="col-4 footer-contato">

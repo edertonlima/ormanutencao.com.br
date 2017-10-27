@@ -1,0 +1,415 @@
+#container-bg {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	//background: url(../images/bg-container.jpg) no-repeat center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#atendimento {
+    width: 100%;
+    height: 65px;
+    margin: 0 auto;
+    background-color: #e48204;
+
+	h1 {
+	    font-size: 20px;
+	    text-align: center;
+	    color: #ffffff;
+	    padding-top: 17px;
+
+	    strong, b {
+	    	color: #ffffff;
+
+	    	i {
+				color: #ffffff;
+				font-size: 30px;
+				display: inline-block;
+				position: relative;
+				top: 4px;
+				margin: 0 5px 0 40px;
+	    	}
+	    }
+	}
+}
+
+.ar-condicionado {
+    width: 100%;
+    background: #e48204;
+    float: left;
+    margin-left: -512px;
+
+	.ar-condicionado-content {
+	    width: 512px;
+	    float: right;
+	}
+
+	.dest-home {
+		display: table;
+	}
+
+	.ar-condicionado-content-text {
+	    display: table-cell;
+	    margin-right: 10px;
+	    vertical-align: middle;
+	}
+
+	h6 {
+	    font-size: 18px;
+	    text-align: left;
+	    color: #e9b63c;
+
+	    strong {
+	    	color: #e9b63c;
+	    }
+	}
+
+	h1 {
+	    font-size: 24px;
+	    text-align: left;
+	    color: #ffffff;
+
+	    strong {
+	    	color: #ffffff;
+	    }
+	}
+
+	img {
+		margin-bottom: -3px;
+	}
+
+	p {
+	    font-size: 14px;
+	    text-align: left;
+	    color: #ffffff;
+	    margin-top: 5px;
+	}
+}
+
+.manutencao {
+    width: 500px;
+    float: right;
+    margin-top: 10px;
+
+	h6 {
+	    font-size: 18px;
+	    text-align: right;
+	    color: #000000;
+
+	    strong {
+	    	color: #000000; 
+	    }
+	}
+
+	h1 {
+	    font-size: 24px;
+	    text-align: right;
+	    color: #000000;
+
+	    strong {
+	    	color: #000000; 
+	    }
+	}
+
+	p {
+	    font-size: 14px;
+	    text-align: right;
+	    margin-top: 15px;
+
+	    strong {
+	    	 color: #e48204;
+	    }
+	}
+
+	.orcamento {
+	    width: 150px;
+	    height: 30px;
+	    margin: 0 auto;
+	    margin-top: 0px;
+	    margin-top: 15px;
+	    float: right;
+	    background: #e48204;
+	    font-size: 16px;
+	    text-align: center;
+	    color: #ffffff;
+	    padding: 5px;
+	    cursor: pointer;
+	    @include animacao;
+
+	    &:hover {
+	    	background: darken(#e48204, 10%);
+	    }
+	}
+}
+
+.servicos {
+    width: 100%;
+    height: 260px;
+    margin-top: 25px;
+    background: rgba(229,230,231, 0.4);
+
+	.cont-servicos {
+	    width: 1024px;
+	    height: 260px;
+	    margin: 0 auto;
+
+		.residencial {
+		    width: 330px;
+		    height: 260px;
+		    margin-right: 10px;
+		    float: left;
+		}
+
+		.predial {
+		    width: 330px;
+		    height: 260px;
+		    margin-right: 10px;
+		    float: left;
+		}
+
+		.comercial {
+		    width: 330px;
+		    height: 260px;
+		    margin-right: 10px;
+		    float: left;
+		}
+
+		.residencial, .predial, .comercial {
+			img {
+			    width: 145px;
+			    height: 94px;
+			    margin: 20px 92px 10px 92px;
+			}
+
+			h2 {
+			    font-size: 20px;
+			    text-align: center;
+			    color: #000000;
+			    font-weight: $bold;
+			}
+
+			p {
+			    font-size: 14px;
+			    text-align: center;
+			    color: #000000;
+			}
+		}
+	}
+}
+
+.col-text-sobre {
+	margin-bottom: 50px;
+}
+
+.parceiros {
+	h4 {
+		font-size: 30px;
+		text-align: center;
+		display: block;
+		color: #000000;
+		margin-bottom: 50px;
+
+		span {
+			display: block;
+			font-size: 16px;
+			line-height: 25px;
+			color: #444;
+		}
+	}
+
+	h5 {
+		text-align: center;
+		font-weight: $bold;
+		margin-top: 10px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.owl-nav {
+		text-align: center;
+		margin-top: 35px;
+
+		.owl-prev, .owl-next {
+			display: inline-block;
+			padding: 5px;
+			@include animacao;
+
+			i {
+				font-size: 20px;
+				@include animacao;
+			}
+
+			&:not(.disabled){
+				&:hover {
+					i {
+						color: $laranja;
+					}
+				}
+			}
+
+			&.disabled {
+				cursor: default;
+				opacity: 0.3
+			}
+		}
+
+		.owl-prev {
+			margin-right: 5px;
+		}
+
+		.owl-next {
+			margin-left: 5px;
+		}
+	}
+}
+
+.list-servicos {
+	margin-bottom: 70px;
+
+	h4 {
+		font-size: 20px;
+		margin: 20px 0 5px;
+		text-align: left;
+	}
+
+	p {
+		font-size: 13px;
+		line-height: 20px;
+		text-align: justify;
+		margin-bottom: 0;
+	}
+
+	.box-galeria {
+		position: relative;
+	}
+
+	.galeria {
+	    width: 150px;
+	    height: 30px;
+	    margin: 0 auto;
+	    margin-top: 0px;
+	    margin-top: 15px;
+	    float: right;
+	    background: #e48204;
+	    font-size: 16px;
+	    text-align: center;
+	    color: #ffffff;
+	    padding: 5px;
+	    cursor: pointer;
+	    text-decoration: none;
+		position: absolute;
+		right: 10px;
+		bottom: -8px;
+	    @include animacao;
+
+	    &:hover {
+	    	background: darken(#e48204, 10%);
+	    }
+	}
+
+	.orcamento {
+		width: 170px;
+		position: relative;
+		right: 0;
+		bottom: 0;
+		float: left;
+	}
+}
+
+.home {
+	.box-page-servico {
+		background: rgba(229,230,231,0.5);
+
+		h2 {
+			font-size: 40px;
+			color: #000000;
+			margin-bottom: 30px;
+			text-align: center;
+			display: block;
+		}
+
+		.list-servicos {
+
+		}
+	}
+}
+
+.atendimento {
+	p {
+		display: block;
+		font-size: 14px;
+		color: #444;
+		font-weight: 300;
+		line-height: 18px;
+		margin-top: 10px;
+		margin-left: 5px;
+	}
+
+	.fone-top {
+		display: block;
+		margin-top: 15px;
+		margin-bottom: 16px;
+		margin-left: 0;
+
+		.redes {
+			display: inline-block;
+			margin-bottom: 5px;
+
+			a {
+				background: #e48204;
+				border-radius: 50%;
+				width: 35px;
+				height: 35px;
+				display: inline-block;
+				text-align: center;
+				margin: 0 3px;
+				line-height: 37px;
+				@include animacao;
+
+				i {
+					font-size: 18px;
+					color: #ffffff;
+					@include animacao;
+				}
+
+				&:hover {
+					background: #444;
+
+					i {
+						color: #e48204;
+					}
+				}
+			}
+		}
+
+		.fone-topo {
+			display: block;
+			font-size: 14px;
+			position: relative;
+			top: 6px;
+			margin-left: 5px;
+			color: #444;
+			font-weight: 300;
+
+			strong {
+				color: #444;
+				font-size: 18px;
+				display: block;
+
+				i {
+					font-size: 18px;
+					margin-right: 5px;
+
+					&.fa-whatsapp {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
