@@ -1,9 +1,10 @@
 <?php
 	global $servico;
 	global $orcamento;
+	global $post_type;
 ?>
 
-<section class="box-content box-page box-page-sobre">
+<section class="box-content box-page">
 	<div class="container">
 		
 		<div class="row">
@@ -65,7 +66,7 @@
 							</fieldset>
 
 							<fieldset <?php if($orcamento == ''){ ?> style="display: none;" <?php } ?>>
-								<input type="text" disabled="disabled" id="assunto" name="assunto:" placeholder="Serviço:" <?php if($orcamento != ''){ ?> value="Serviço: <?php echo $servico; ?>" <?php } ?>>
+								<input type="text" disabled="disabled" id="assunto" name="assunto:" placeholder="" <?php if($orcamento != ''){ ?> value="Serviço <?php echo $post_type->labels->singular_name; ?>, <?php echo $servico; ?>" <?php } ?>>
 							</fieldset>
 
 

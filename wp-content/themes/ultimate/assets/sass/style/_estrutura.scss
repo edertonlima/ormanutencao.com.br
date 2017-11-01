@@ -121,7 +121,7 @@ body * {
 		padding: 70px 0;
 	}
 
-	&.box-page-servico {
+	&.box-page-servico:not(.box-list-servico) {
 		padding-bottom: 0px;
 	}
 
@@ -156,5 +156,22 @@ body * {
 
 	.box-page-servico {
 		padding-bottom: 70px;
+	}
+}
+
+.box-page-sobre {
+	.col-text {
+		.img-sobre {
+			float: left;
+			margin-right: 20px;
+		}
+	}
+
+	.galeria-servico {
+		margin-top: 10px;
+
+		.item-galeria {
+			margin-top: 30px;
+		}
 	}
 }

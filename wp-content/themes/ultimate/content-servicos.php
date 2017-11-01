@@ -1,54 +1,63 @@
 
-<section class="box-content box-page box-page-servico">
-	<div class="container">
-		
-		<div class="row">
+
 			<div class="col-text">
 
-				<div class="col-12">
-					<div class="text-detalhe">
-						<?php the_content(); ?>
-					</div>
-				</div>
+				<div class="owl-carousel owl-theme servicos-home">
 
-			</div>
-			<div class="col-text">
-
-				<?php if( have_rows('servicos') ):
-					$num_galera = 0;
-					while ( have_rows('servicos') ) : the_row(); $num_galera = $num_galera+1; $imagem_galeria = get_sub_field('portfolio'); ?>
-
-						<div class="col-4 list-servicos">
-							<div class="box-galeria">
-								<?php $image = get_sub_field('imagem_principal'); ?>
-								<?php if( $imagem_galeria ): ?>
-									<a href="<?php echo $image['url']; ?>" class="galeria fancybox" data-fancybox="galeria<?php echo '-'.$num_galera; ?>">Visualizar Galeria</a>
-								<?php endif; ?>
-								<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php the_sub_field('titulo'); ?>">
-							</div>
-							<h4><?php the_sub_field('titulo'); ?></h4>
-							<p><?php the_sub_field('texto'); ?></p>
-							<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>?orcamento=<?php echo (get_row_index()-1); ?>" class="galeria orcamento">Solicitar Orçamento</a>
-
-							<?php if( $imagem_galeria ): ?>
-								<?php foreach( $imagem_galeria as $imagem ): ?>
-									<a href="<?php echo $imagem['url']; ?>" class="fancybox" data-fancybox="galeria<?php echo '-'.$num_galera; ?>" style="display: none;">
-										<img src="<?php echo $imagem['sizes']['thumbnail']; ?>">
-									</a>
-								<?php endforeach; ?>
-							<?php endif; ?>
-
+					<div class="list-servicos item">
+						<div class="box-galeria">
+							<?php $image = get_field('imagem_comercial','option'); ?>
+							<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="Serviço Comercial">
 						</div>
+						<h4>Serviço Comercial</h4>
+						<p><?php the_field('resumo_comercial','option'); ?></p>
+						<a href="<?php echo get_home_url(); ?>/servicos/comercial" class="galeria orcamento" title="Ver mais">Ver mais</a>
+					</div>
 
-					<?php endwhile;
-				endif; ?>
+					<div class="list-servicos item">
+						<div class="box-galeria">
+							<?php $decorativo = get_field('imagem_decorativo','option'); ?>
+							<img src="<?php echo $decorativo['sizes']['thumbnail']; ?>" alt="Serviço Decorativo">
+						</div>
+						<h4>Serviço Decorativo</h4>
+						<p><?php the_field('resumo_decorativo','option'); ?></p>
+						<a href="<?php echo get_home_url(); ?>/servicos/decorativo" class="galeria orcamento" title="Ver mais">Ver mais</a>
+					</div>
+
+					<div class="list-servicos item">
+						<div class="box-galeria">
+							<?php $industrial = get_field('imagem_industrial','option'); ?>
+							<img src="<?php echo $industrial['sizes']['thumbnail']; ?>" alt="Serviço Industrial">
+						</div>
+						<h4>Serviço Industrial</h4>
+						<p><?php the_field('resumo_industrial','option'); ?></p>
+						<a href="<?php echo get_home_url(); ?>/servicos/industrial" class="galeria orcamento" title="Ver mais">Ver mais</a>
+					</div>
+
+					<div class="list-servicos item">
+						<div class="box-galeria">
+							<?php $predial = get_field('imagem_predial','option'); ?>
+							<img src="<?php echo $predial['sizes']['thumbnail']; ?>" alt="Serviço Predial">
+						</div>
+						<h4>Serviço Predial</h4>
+						<p><?php the_field('resumo_predial','option'); ?></p>
+						<a href="<?php echo get_home_url(); ?>/servicos/predial" class="galeria orcamento" title="Ver mais">Ver mais</a>
+					</div>
+
+					<div class="list-servicos item">
+						<div class="box-galeria">
+							<?php $residencial = get_field('imagem_residencial','option'); ?>
+							<img src="<?php echo $residencial['sizes']['thumbnail']; ?>" alt="Serviço Residencial">
+						</div>
+						<h4>Serviço Residencial</h4>
+						<p><?php the_field('resumo_residencial','option'); ?></p>
+						<a href="<?php echo get_home_url(); ?>/servicos/residencial" class="galeria orcamento" title="Ver mais">Ver mais</a>
+					</div>
+
+				</div>
 			
 			</div>
-			</div>
-		</div>
 
-	</div>
-</section>
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){	    
@@ -65,4 +74,29 @@
 	jQuery(document).ready(function() {		
 		jQuery('.fancybox').fancybox();	
 	});
+</script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	jQuery('.owl-carousel.servicos-home').owlCarousel({
+		loop: false,
+		center: false,
+		nav: true,
+		margin: 20,
+		navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+		responsive: {
+			0: {
+				items: 1
+			},
+			600: {
+				items: 2
+			},
+			768: {
+				items: 3
+			},
+			1000: {
+				items: 4
+			}
+		}
+	}) 
 </script>

@@ -115,9 +115,32 @@ img {
     padding: 30px 0 13px;
 
 	h1 {
-	    font-font: 30px;
+	    font-size: 30px;
 	    text-align: left;
 	    color: #ffffff;
 	    padding-left: 100px;
+
+	    span {
+		    display: block;
+
+		    i {
+				color: #fff;
+				font-size: 12px;
+				display: inline-block;
+		    }
+
+		    a {
+		    	padding: 4px 15px;
+		    	font-size: 14px;
+		    	background-color: #ffffff;
+		    	color: #e48204;
+		    	text-decoration: none;
+		    	@include animacao;
+
+		    	&:hover {
+		    		opacity: .7;
+		    	}
+		    }
+	    }
 	}
 }

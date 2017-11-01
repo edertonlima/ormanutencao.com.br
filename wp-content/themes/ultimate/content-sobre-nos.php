@@ -38,7 +38,6 @@
 		</div>
 
 	</div>
-
 </section>
 
 <?php if( have_rows('parceiros') ): ?>

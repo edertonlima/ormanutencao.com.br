@@ -117,46 +117,8 @@
 			<div class="col-12">
 				<h2>Nossos Serviços</h2>
 
-				<div class="col-text">
+				<?php get_template_part( 'content-servicos', 'page' ); ?>
 
-					<div class="owl-carousel owl-theme servicos-home">
-
-						<?php if( have_rows('servicos',129) ):
-							$num_galera = 0;
-
-							while ( have_rows('servicos',129) ) : the_row(); $num_galera = $num_galera+1; $imagem_galeria = get_sub_field('portfolio');
-								//if($num_galera < 4){ ?>
-
-									<div class="list-servicos item">
-										<div class="box-galeria">
-											<?php $image = get_sub_field('imagem_principal'); ?>
-											<?php if( $imagem_galeria ): ?>
-												<a href="<?php echo $image['url']; ?>" class="galeria fancybox" data-fancybox="galeria<?php echo '-'.$num_galera; ?>">Visualizar Galeria</a>
-											<?php endif; ?>
-											<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php the_sub_field('titulo'); ?>">
-										</div>
-										<h4><?php the_sub_field('titulo'); ?></h4>
-										<p><?php the_sub_field('texto'); ?></p>
-										<a href="<?php echo get_permalink(get_page_by_path('atendimento')); ?>?orcamento=<?php echo (get_row_index()-1); ?>" class="galeria orcamento">Solicitar Orçamento</a>
-
-										<?php if( $imagem_galeria ): ?>
-											<?php foreach( $imagem_galeria as $imagem ): ?>
-												<a href="<?php echo $imagem['url']; ?>" class="fancybox" data-fancybox="galeria<?php echo '-'.$num_galera; ?>" style="display: none;">
-													<img src="<?php echo $imagem['sizes']['thumbnail']; ?>">
-												</a>
-											<?php endforeach; ?>
-										<?php endif; ?>
-
-									</div>
-
-								<?php //}
-							endwhile;
-
-						endif; ?>
-
-					</div>
-				
-				</div>
 			</div>
 
 		</div>
@@ -209,3 +171,6 @@
 		}
 	}) 
 </script>
+
+
+<?php /* echo get_permalink(get_page_by_path('atendimento')); ?>?orcamento=<?php echo (get_row_index()-1); */ ?>

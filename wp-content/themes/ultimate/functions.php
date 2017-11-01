@@ -1,6 +1,6 @@
 <?php
 
-$producao = true;
+$producao = false;
 
 /* HABILITAR / DESABILITAR */
 add_theme_support( 'post-thumbnails' );
@@ -103,6 +103,12 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Configurações Gerais',
 		'menu_title'	=> 'Geral',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Serviços',
+		'menu_title'	=> 'Serviços',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 }
@@ -228,4 +234,301 @@ add_filter( 'get_the_archive_title', function ($title) {
     return $title;
 
 });
+
+
+	/* POST TYPE */
+	function comercial_post_type(){
+		register_post_type('comercial', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Comercial'),
+				'singular_name' =>      __('Comercial'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'servicos/comercial',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%comercial_taxonomy%/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','editor','excerpt','thumbnail'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-store'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'comercial_post_type');
+	function comercial_taxonomy() {  
+		register_taxonomy(  
+			'comercial_taxonomy',  
+			'comercial',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'servicos/comercial',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%comercial_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'comercial_taxonomy');
+	/* POST TYPE */
+
+
+	/* POST TYPE */
+	function decorativo_post_type(){
+		register_post_type('decorativo', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Decorativo'),
+				'singular_name' =>      __('Decorativo'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'servicos/decorativo',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%decorativo_taxonomy%/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','editor','excerpt','thumbnail'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-admin-appearance'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'decorativo_post_type');
+	function decorativo_taxonomy() {  
+		register_taxonomy(  
+			'decorativo_taxonomy',  
+			'decorativo',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'servicos/decorativo',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%decorativo_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'decorativo_taxonomy');
+	/* POST TYPE */
+
+
+	/* POST TYPE */
+	function industrial_post_type(){
+		register_post_type('industrial', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Industrial'),
+				'singular_name' =>      __('Industrial'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'servicos/industrial',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%industrial_taxonomy%/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','editor','excerpt','thumbnail'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-businessman'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'industrial_post_type');
+	function industrial_taxonomy() {  
+		register_taxonomy(  
+			'industrial_taxonomy',  
+			'industrial',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'servicos/industrial',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%industrial_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'industrial_taxonomy');
+	/* POST TYPE */
+
+
+	/* POST TYPE */
+	function predial_post_type(){
+		register_post_type('predial', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Predial'),
+				'singular_name' =>      __('Predial'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'servicos/predial',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%predial_taxonomy%/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','editor','excerpt','thumbnail'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-building'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'predial_post_type');
+	function predial_taxonomy() {  
+		register_taxonomy(  
+			'predial_taxonomy',  
+			'predial',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'servicos/predial',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%predial_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'predial_taxonomy');
+	/* POST TYPE */
+
+
+
+	/* POST TYPE */
+	function residencial_post_type(){
+		register_post_type('residencial', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Residencial'),
+				'singular_name' =>      __('Residencial'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'servicos/residencial',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%residencial_taxonomy%/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','editor','excerpt','thumbnail'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-admin-home'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'residencial_post_type');
+	function residencial_taxonomy() {  
+		register_taxonomy(  
+			'residencial_taxonomy',  
+			'residencial',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'servicos/residencial',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%residencial_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'residencial_taxonomy');
+	/* POST TYPE */
+
 ?>

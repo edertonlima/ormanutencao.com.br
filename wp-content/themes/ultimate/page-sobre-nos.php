@@ -4,6 +4,14 @@
 
 <?php get_header(); ?>
 
+	<header class="header-title">
+		<div class="container">
+
+			<h1><?php the_title(); ?></h1>
+
+		</div>
+	</header>
+
 	<?php
 	// Start the loop.
 	while ( have_posts() ) : the_post();

@@ -460,3 +460,25 @@ a {
 		}
 	}
 }
+
+
+.solicitar-orcamento {
+	float: left;
+	width: auto;
+    margin: 0 auto;
+    margin-top: 15px;
+    background: #e48204;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    @include animacao;
+
+    &:hover {
+    	background: darken(#e48204, 10%);
+    	text-decoration: none;
+    	color: #ffffff;
+    }
+}

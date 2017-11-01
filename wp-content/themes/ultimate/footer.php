@@ -36,11 +36,11 @@
 
 				<ul>
 
-					<li><a href="javascript:" title="Comercial">- Comercial</a></li>
-					<li><a href="javascript:" title="Decorativo">- Decorativo</a></li>
-					<li><a href="javascript:" title="Insdustrial">- Insdustrial</a></li>
-					<li><a href="javascript:" title="Predial">- Predial</a></li>
-					<li><a href="javascript:" title="Residencial">- Residencial</a></li>
+					<li><a href="<?php echo get_post_type_archive_link('comercial'); ?>" title="Comercial">- Comercial</a></li>
+					<li><a href="<?php echo get_post_type_archive_link('decorativo'); ?>" title="Decorativo">- Decorativo</a></li>
+					<li><a href="<?php echo get_post_type_archive_link('industrial'); ?>" title="Industrial">- Industrial</a></li>
+					<li><a href="<?php echo get_post_type_archive_link('predial'); ?>" title="Predial">- Predial</a></li>
+					<li><a href="<?php echo get_post_type_archive_link('residencial'); ?>" title="Residencial">- Residencial</a></li>
 
 
 				<?php /*
