@@ -6,12 +6,16 @@
 	<header class="header-title">
 		<div class="container">
 			
-			<h1>
-				<span>
-					<a href="<?php echo get_post_type_archive_link($post_type->name); ?>" title="Serviço <?php echo $post_type->labels->singular_name; ?>">Serviço <?php echo $post_type->labels->singular_name; ?></a>
-				</span>
-				<?php echo single_term_title(); ?>
-			</h1>
+			<h2>
+				<?php echo get_cat_name(1); ?>
+				<ul class="breadcrumb">
+					<li><a href="<?php echo get_home_url(); ?>" title="Home">Home</a></li>
+					<li><a href="<?php echo get_post_type_archive_link($post_type->name); ?>" title="Serviço <?php echo $post_type->labels->singular_name; ?>"><?php echo $post_type->labels->singular_name; ?></a></li>
+					<li><a href="<?php echo get_post_type_archive_link($post_type->name); ?>" title="Serviço <?php echo $post_type->labels->singular_name; ?>"><?php echo single_term_title(); ?></a></li>
+					<li><span><?php the_title(); ?></span></li>
+				</ul>
+			</h2>
+
 		</div>
 	</header>
 
