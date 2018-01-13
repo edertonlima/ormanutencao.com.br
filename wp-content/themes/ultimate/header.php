@@ -99,16 +99,19 @@
 
 <script type="text/javascript">
 	jQuery.noConflict();
+	width = jQuery(window).width();
 
 	jQuery(document).ready(function(){
 
 		jQuery('.menu-mobile').click(function(){
 			if(jQuery(this).hasClass('active')){
-				jQuery('.nav').css('top','-110vh');
+				jQuery('#menu').css('display','none');
+				jQuery('.fone-top').css('display','none');
 				jQuery(this).removeClass('active');
 				jQuery('.header').removeClass('active');
 			}else{
-				jQuery('.nav').css('top','0px');
+				jQuery('#menu').css('display','table');
+				jQuery('.fone-top').css('display','block');
 				jQuery(this).addClass('active');
 				jQuery('.header').addClass('active');
 			}
@@ -127,9 +130,15 @@
 	});	
 
 	jQuery(window).resize(function(){
-		jQuery('.menu-mobile').removeClass('active');
-		jQuery('.header').removeClass('active');
-		jQuery('.nav').css('top','-110vh');
+		if(width > 700){
+			if(jQuery('.menu-mobile').hasClass('active')){
+				jQuery('.menu-mobile').removeClass('active');
+				jQuery('.header').removeClass('active');
+				jQuery('#menu').css('display','table');
+				jQuery('.fone-top').css('display','block');
+			}
+		}
+
 		if(jQuery('body').height() <= jQuery(window).height()){
 			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
 		}else{
@@ -203,5 +212,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					</li>
 				</ul>
 			</div>
+
+			<a href="javascript:" class="menu-mobile"><span><em>X</em></span></a>
+
 		</div>
 	</div>

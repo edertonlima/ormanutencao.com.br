@@ -1,7 +1,11 @@
 	
 <div id="atendimento">
 	<div class="container">
-		<h1><strong>ATENDIMENTO: <i class="fa fa-phone" aria-hidden="true"></i><?php the_field('telefone_1', 'option'); ?><i class="fa fa-whatsapp" aria-hidden="true"></i> <?php the_field('whatsapp', 'option'); ?></strong></h1>
+		<h1><strong>
+			<span>ATENDIMENTO: </span>
+			<span><i class="fa fa-phone" aria-hidden="true"></i><?php the_field('telefone_1', 'option'); ?></span>
+			<span><i class="fa fa-whatsapp" aria-hidden="true"></i> <?php the_field('whatsapp', 'option'); ?></span>
+		</strong></h1>
 	</div>
 </div>
 

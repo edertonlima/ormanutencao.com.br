@@ -130,13 +130,13 @@
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){
-		height_img = jQuery('.ar-condicionado-content').height();
-		jQuery('.dest-home').height(height_img);
+		//height_img = jQuery('.ar-condicionado-content').height();
+		//jQuery('.dest-home').height(height_img);
 	});
 
 	jQuery(window).resize(function(){
-		height_img = jQuery('.ar-condicionado-content').height();
-		jQuery('.dest-home').height(height_img);
+		//height_img = jQuery('.ar-condicionado-content').height();
+		//jQuery('.dest-home').height(height_img);
 	});
 </script>
 
